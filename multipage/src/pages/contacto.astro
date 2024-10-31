@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import { Icon } from "astro-icon/components";
+
+const buttons = [{name:"Aceptar"}, {name:"enviar"}, {name:"cancelar"}, {name:"otro"}];
+---
+
+<Layout title="Somos Ingenieros">
+  <div class="mt-10 mx-10">
+    Quienes somos
+    <Button del="true">
+      <span slot="text"> Botón 1 </span>
+
+      <svg
+        slot="star-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-3"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"></path>
+      </svg>
+    </Button>
+    <Button>
+
+    </Button>
+  </div>
+  <div class="flex">
+  <Icon name="image" size="56" class="text-green-500 ml-14 mt-5" />
+  <Icon name="mdi:biohazard" size="56" class="text-green-500 mt-5"/>
+  <Icon name="svg-spinners:wind-toy" size="56" class="mt-5 text-blue-700"/>
+</div>
+
+  {buttons.map((text) => {
+    return <Button><span slot="text">{text.name}</span></Button> 
+   })
+  }
+
+</Layout>

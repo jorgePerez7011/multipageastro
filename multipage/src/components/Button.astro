@@ -1,0 +1,12 @@
+---
+const { del = false } = Astro.props;
+---
+
+<div
+  class="items-center space-x-1 transition-colors px-5 inline-flex bg-orange-400 rounded-sm hover:bg-orange-500 cursor-pointer text-white"
+  class:list={{ "bg-red-500 hover:bg-red-600": del }}
+>
+  <slot name="star-icon" />
+  <slot name="text"> Enviar </slot>
+  <slot name="end-icon" />
+</div>
